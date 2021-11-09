@@ -1,24 +1,16 @@
 # vue-electron
 
-## Project setup
+## Instalar dependencias
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### compilar solo la version web
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### COmpilar version web y electron
 ```
-npm run build
+yarn electron:serve
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
