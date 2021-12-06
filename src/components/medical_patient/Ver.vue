@@ -3,12 +3,12 @@
         <template v-if="roleUser">
             <div class="col-12" v-if="medical_patient">
                 <center>
-                    <h3>Datos y historial del paciente</h3>
+                    <h3>Datos e historial del paciente</h3>
                 </center>
                 <div class="table-reponsive">
                     <table class="table table-dark rounded">
                         <tr>
-                            <th>Numero de paciente</th>
+                            <th>Número de paciente</th>
                             <td>{{ medical_patient.id }}</td>
                         </tr>
                         <tr>
@@ -24,11 +24,11 @@
                             <td>{{ medical_patient.date_of_birth }}</td>
                         </tr>
                         <tr>
-                            <th>Direccion del paciente</th>
+                            <th>Dirección del paciente</th>
                             <td>{{ medical_patient.address }}</td>
                         </tr>
                         <tr>
-                            <th>Numero de telefono del paciente</th>
+                            <th>Número de teléfono del paciente</th>
                             <td>{{ medical_patient.phone }}</td>
                         </tr>
                         <tr>
@@ -52,21 +52,21 @@
                             @click="presionSistolica"
                             class="btn btn-outline-danger"
                         >
-                            Presion Sistolica
+                            Presión Sistólica
                         </button>
                         <button
                             type="button"
                             @click="presionDiastolica"
                             class="btn btn-outline-danger"
                         >
-                            Presion Diastolica
+                            Presión Diastólica
                         </button>
                         <button
                             type="button"
                             @click="saturacionOxigeno"
                             class="btn btn-outline-danger"
                         >
-                            Saturacion de Oxigeno
+                            Saturación de Oxigeno
                         </button>
                         <button
                             type="button"
@@ -121,7 +121,7 @@
             </div>
         </template>
         <template v-else>
-            <h1>Pagina no encontrada</h1>
+            <h1>Página no encontrada</h1>
         </template>
     </div>
 </template>

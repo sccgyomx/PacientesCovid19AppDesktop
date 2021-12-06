@@ -46,13 +46,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Direccion del paciente</th>
+                                    <th>Dirección del paciente</th>
                                     <td>
                                         {{ patient.address }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Numero de telefono del paciente</th>
+                                    <th>Número de teléfono del paciente</th>
                                     <td>
                                         {{ patient.phone }}
                                     </td>
@@ -81,10 +81,10 @@
                     </template>
                     <template v-else>
                         <h1 class="display-5">Buscar Paciente</h1>
-                        <label for=""> Introdusca su numero de paciente </label>
+                        <label for=""> Introduzca su número de paciente </label>
                         <p></p>
                         <label for="">
-                            El cual le proporcionado por el medico
+                            El cual le proporcionado por el médico
                         </label>
                         <b-form>
                             <div class="form-group mt-4">
@@ -120,7 +120,7 @@
                             <div class="table-reponsive mt-2 mb-2">
                                 <table class="table table-dark rounded">
                                     <tr>
-                                        <th>Numero de paciente</th>
+                                        <th>Número de paciente</th>
                                         <td>
                                             {{ medical_patient.id }}
                                         </td>

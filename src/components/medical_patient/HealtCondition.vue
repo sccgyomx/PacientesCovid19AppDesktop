@@ -23,10 +23,10 @@
                                         </div>
                                     </div>
                                     <div class="row-1">
-                                        <label>Precion</label>
+                                        <label>Presión</label>
                                         <div class="col-sm">
                                             <input
-                                                type="text"
+                                                type="number"
                                                 class="form-control"
                                                 v-model="
                                                     healtCondition.systolic_pressure
@@ -36,7 +36,7 @@
                                         <label>/</label>
                                         <div class="col-sm">
                                             <input
-                                                type="text"
+                                                type="number"
                                                 class="form-control"
                                                 v-model="
                                                     healtCondition.diastolic_pressure
@@ -45,10 +45,10 @@
                                         </div>
                                     </div>
                                     <div class="row-1">
-                                        <label>Saturacion de oxigeno</label>
+                                        <label>Saturación de oxigeno</label>
                                         <div class="col-sm">
                                             <input
-                                                type="text"
+                                                type="number"
                                                 class="form-control"
                                                 v-model="
                                                     healtCondition.oxigen_saturation
@@ -60,7 +60,7 @@
                                         <label>Temperatura corporal</label>
                                         <div class="col-sm">
                                             <input
-                                                type="text"
+                                                type="number"
                                                 class="form-control"
                                                 v-model="
                                                     healtCondition.temperature
@@ -75,7 +75,7 @@
                                         >
                                         <div class="col-sm">
                                             <input
-                                                type="text"
+                                                type="number"
                                                 class="form-control"
                                                 v-model="
                                                     healtCondition.fasting_glucose
@@ -85,12 +85,12 @@
                                     </div>
                                     <div class="row-1">
                                         <label
-                                            >Glucosa despues de una comida
+                                            >Glucosa después de una comida
                                             (Postprandial)</label
                                         >
                                         <div class="col-sm">
                                             <input
-                                                type="text"
+                                                type="number"
                                                 class="form-control"
                                                 v-model="
                                                     healtCondition.postprandial_glucose
@@ -193,6 +193,7 @@ export default {
             this.errors = [];
             this.healtCondition.medical_patients_id = this.medical_patient.id;
             this.validarDatos();
+
             if (this.errors.length === 0) {
                 axios
                     .post("https://pacientescovid2019.transformacionuniversitaria.com/api/healtConditions/new", this.healtCondition, {
@@ -214,27 +215,46 @@ export default {
                     });
             }
         },
+    
         validarDatos() {
+            //Descripción 
+
             if (this.healtCondition.description === "") {
-                this.errors.push("El campo observaciones esta vacio");
+                this.errors.push("El campo observaciones está vacío");
             }
+            if (this.healtCondition.description.length > 50){
+                this.errors.push("La descripción no puede contener más de 50 caracteres");
+            }
+           //systolic pressure
+           
+         
             if (this.healtCondition.systolic_pressure === "") {
-                this.errors.push("El campo superior de precion esta vacio");
+                this.errors.push("El campo superior de presión está vacío");
             }
+            if(this.healtCondition.systolic_pressure.length > 3 || this.healtCondition.systolic_pressure.length<2){
+                this.errors.push("Escriba un valor válido");
+            }
+            
+            
+           //diastolic pressure
             if (this.healtCondition.diastolic_pressure === "") {
-                this.errors.push("El campo superior de precion esta vacio");
+                this.errors.push("El campo superior de presión está vacío");
             }
+            //oxigen saturation
             if (this.healtCondition.oxigen_saturation === "") {
-                this.errors.push("El campo saturacion de oxigeno esta vacio");
+                this.errors.push("El campo saturación de oxígeno está vacío");
             }
+            //temperature
             if (this.healtCondition.temperature === "") {
-                this.errors.push("El campo temperatura corporal esta vacio");
+                this.errors.push("El campo temperatura corporal está vacío");
             }
+            //fasting glucose
             if (this.healtCondition.fasting_glucose === "") {
-                this.errors.push("El campo glucosa preprandial esta vacio");
+                this.errors.push("El campo glucosa preprandial está vacío");
             }
+            //postprandial_glucose
             if (this.healtCondition.postprandial_glucose === "") {
-                this.errors.push("El campo glucosa postprandial esta vacio");
+                this.errors.push("El campo glucosa postprandial está vacío");
             }
         },
     },

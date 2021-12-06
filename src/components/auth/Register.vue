@@ -114,27 +114,28 @@
       validar() {
         if (this.form.name.length < 10) {
           this.errors.push(
-            "El numero minimo de caracteres debe ser 3 para el atributo Nombre"
+            "El número mínimo de caracteres debe ser 3 para el atributo Nombre"
           );
         }
-        if (this.form.email.length < 3) {
+        if (this.form.email.length < 10) {
           this.errors.push(
-            "El numero minimo de caracteres debe ser 3para el atributo Correo"
+            "El número mínimo de caracteres debe ser 5 para el atributo Correo"
           );
         }
+       
         if (this.form.password.length < 8) {
           this.errors.push(
-            "El numero minimo de caracteres debe ser 8 para el atributo Contraseña"
+            "El número mínimo de caracteres debe ser 8 para el atributo Contraseña"
           );
         }
         if (this.form.address.length < 10) {
           this.errors.push(
-            "El numero minimo de caracteres debe ser 10 para el atributo Dirección"
+            "El número mínimo de caracteres debe ser 10 para el atributo Dirección"
           );
         }
         if (this.form.phone.length < 10) {
           this.errors.push(
-            "El numero minimo de caracteres debe ser 10 para el atributo Telefono"
+            "El número mínimo de caracteres debe ser 10 para el atributo Teléfono"
           );
         }
         if (this.errors.length > 0) {

@@ -201,14 +201,14 @@ export default {
                     numericality: true,
                     length: {
                         minimum: 1,
-                        message: "Por lo menos debe tener 1 digitos",
+                        message: "Por lo menos debe tener 1 digito",
                     },
                 },
                 gender: {
                     presence: true,
                     length: {
                         minimum: 1,
-                        message: "Selecione una opcion",
+                        message: "Selecione una opción",
                     },
                 },
                 date_of_birth: {
@@ -241,7 +241,7 @@ export default {
                     numericality: true,
                     length: {
                         minimum: 1,
-                        message: "Por lo menos debe tener 1 digitos",
+                        message: "Por lo menos debe tener 1 digito",
                     },
                 },
                 height: {
@@ -263,7 +263,7 @@ export default {
         },
         isDateFormat(dateString) {
             if (!dateString) {
-                return "No se agrego fecha de nacimiento";
+                return "No se agregó fecha de nacimiento";
             } else {
                 if (!this.isValidDate(dateString)) {
                     return "El formato de fecha no es correcto";
